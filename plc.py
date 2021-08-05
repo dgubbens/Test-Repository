@@ -52,7 +52,7 @@ with requests.Session() as s:
     a = soup.findAll('tr', attrs={'class':'var'})
     print("a equals: ")
     print(a)
-    e = 0
+
     newLineString = ''
     varValueString = ''
     for i in a:
@@ -62,30 +62,10 @@ with requests.Session() as s:
             print(varValue)
             varValueString = varValue
             print("The Monitor Value you requested is: " + varValue.text)
-            replacer = input("Replace value with what?: ")
             print("varValue.string equals: ")
             print(varValue.string)
-            varValue.string = replacer
             print(varValue)
-            print("varValue.string equals: ")
-            print(varValue.string)
 
-            #print('pre-newLine')
-            #newLine = '<td class="vartable_static_field updatable readonly" id="vartable_updatable_'+str(e)+'">'+replacer+'</td>'
-            #newLineString = newLine
-            #print("newLine equals: ")
-            #print(newLine)
-
-            #newTag = 'td class="vartable_static_field updatable readonly" id="vartable_updatable_'+str(e)
-            #tag = varValue.td
-            #print("tag equals: ")
-            #print(tag)
-            #tag.string = replacer
-            #print(tag)
-            
-        e+=1
-
-    #soup.findAll(text=varValueString).replaceWith(newLineString)
 
 
 
