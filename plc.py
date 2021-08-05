@@ -48,23 +48,19 @@ with requests.Session() as s:
     print(request)
     print('-----------------------------------------------------------------------------------------')    
 
-
+    
     a = soup.findAll('tr', attrs={'class':'var'})
     print("a equals: ")
     print(a)
 
-    newLineString = ''
-    varValueString = ''
+    
     for i in a:
         varValue = i.find('td', attrs={'id':request})
         if varValue != None:
             print("varValue equals: ")
             print(varValue)
-            varValueString = varValue
             print("The Monitor Value you requested is: " + varValue.text)
-            print("varValue.string equals: ")
-            print(varValue.string)
-            print(varValue)
+
 
 
 
